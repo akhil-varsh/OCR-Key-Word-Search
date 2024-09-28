@@ -11,10 +11,10 @@ import os
 warnings.simplefilter("ignore")
 
 hf_token = "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"
-from PIL import Image
+
 @st.cache_resource
 def load_model():
-    # Load tokenizer and model
+    
     tokenizer = AutoTokenizer.from_pretrained('ucaslcl/GOT-OCR2_0', trust_remote_code=True, use_auth_token=hf_token)
     model = AutoModel.from_pretrained('ucaslcl/GOT-OCR2_0', trust_remote_code=True, 
                                       low_cpu_mem_usage=True, 
@@ -27,12 +27,12 @@ def load_model():
 
 tokenizer, model = load_model()
 
-# Perform OCR function
+
 def perform_ocr(image):
-    # Convert the uploaded file to a PIL image
+   
     pil_image = Image.open(image).convert('RGB')
     
-    # Convert PIL image to numpy array
+    
     image_np = np.array(pil_image)
     
     # Save the image temporarily
@@ -43,7 +43,7 @@ def perform_ocr(image):
     with torch.no_grad():
         ocr_result = model.chat(tokenizer, image_file, ocr_type='ocr')
     
-    # Remove the temporary image file
+    
     os.remove(image_file)
     
     return ocr_result
@@ -55,16 +55,12 @@ def highlight_text(text, query):
     highlighted_text = pattern.sub(f"<span style='background-color: #ADD8E6; color: black;'>{query}</span>", text)
     return highlighted_text
 
-# Search functionality to search within OCR result, highlight, and return the modified text
+# Search functionality to search within OCR result and highlight
 def search_text(ocr_result, query):
-    # If no query is provided, return the original OCR result
+    
     if not query:
         return ocr_result, "No matches found."
-
-    # Highlight the searched term in the OCR text
     highlighted_result = highlight_text(ocr_result, query)
-    
-    # Split OCR result into lines and search for the query
     lines = ocr_result.split('\n')
     matching_lines = [line for line in lines if query.lower() in line.lower()]
     
