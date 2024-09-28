@@ -1,19 +1,17 @@
 import streamlit as st
-import numpy as np
-import os
-from transformers import AutoModel, AutoTokenizer
-import torch
+from transformers import AutoModel
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from PIL import Image
+import numpy as np
+import torch
 import warnings
 import re
-from io import BytesIO
+import os
 
-# Suppress warnings
 warnings.simplefilter("ignore")
 
-# Retrieve Hugging Face token
-hf_token = os.getenv("HF_TOKEN")
-
+hf_token = "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"
+from PIL import Image
 @st.cache_resource
 def load_model():
     # Load tokenizer and model
@@ -109,3 +107,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
