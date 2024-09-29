@@ -10,7 +10,7 @@ import os
 
 warnings.simplefilter("ignore")
 
-hf_token = "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"
+hf_token = "REPLACE_YOUR_HF_TOKEN"
 
 @st.cache_resource
 def load_model():
