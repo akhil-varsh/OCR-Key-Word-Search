@@ -1,4 +1,4 @@
-```markdown
+
 # OCR and Text Search App
 
 This repository contains a Streamlit-based application that performs Optical Character Recognition (OCR) on uploaded images and enables users to search and highlight specific text within the extracted results.
@@ -102,4 +102,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ---
 
 Feel free to contribute or raise issues to improve the app! 🚀
-```
+
