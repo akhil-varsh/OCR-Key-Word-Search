@@ -104,6 +104,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 Feel free to contribute or raise issues to improve the app! 🚀
 
 <p align="center">
-  Made with ❤️ by the Akhil
+  Made with ❤️ by Akhil
 </p>
 
