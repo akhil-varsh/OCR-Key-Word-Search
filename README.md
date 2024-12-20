@@ -80,7 +80,7 @@ ocr-key-search-app/
 - Optimize performance for large images. 🚀
 
 ## License 📜
-This project is licensed under the **MIT License**. See the `LICENSE` file for details. 🔓
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 🔓
 
 Feel free to contribute or raise issues to improve the app! 🌟
 
